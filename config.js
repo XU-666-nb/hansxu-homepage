@@ -23,7 +23,20 @@ window.HOME_CONFIG = {
       text: "以后可以接 R2、AList、NAS 或 Mx Space 的图片内容。",
       image:
         "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1000&q=80"
+    },
+    {
+      title: "小城古桥",
+      text: "老家",
+      image:
+          "E: \个人主页\更新内容\life\191391C842E672C522BA9C16C9A794A7.png"
+      },
+    {
+      title: "傍晚的桥",
+      text: "河面、石桥和慢慢暗下来的天空。",
+      image: 
+        "E:\个人主页\更新内容\life\177D6AFBE91FC35F4F137CA653FED62A.png"
     }
+    ],
   ],
   posts: [
     {
