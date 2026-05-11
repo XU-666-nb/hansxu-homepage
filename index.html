@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hans Xu</title>
+    <meta
+      name="description"
+      content="Hans Xu 的个人主页，记录生活、文章、项目和实时数据。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Hans Xu">
+        <span class="brand-mark">H</span>
+        <span>Hans Xu</span>
+      </a>
+      <nav class="nav" aria-label="主要导航">
+        <a href="#life">生活</a>
+        <a href="#posts">文章</a>
+        <a href="#projects">项目</a>
+        <a href="#live">实时</a>
+        <a href="#contact">联系</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">hansxu.ccwu.cc</p>
+          <h1>Hans Xu 的个人空间</h1>
+          <p class="lead">
+            用来放生活记录、照片、文章、项目和一些从其他网站接入的实时信息。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#life">看看生活</a>
+            <a class="button" href="#live">实时数据</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="今日状态">
+          <span class="panel-label">Today</span>
+          <strong id="today-title">正在加载今日状态</strong>
+          <p id="today-note">稍等一下，页面正在读取本地配置。</p>
+        </div>
+      </section>
+
+      <section id="life" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Life</p>
+          <h2>生活片区</h2>
+          <p>照片、日常、旅行和想保存下来的小片段。</p>
+        </div>
+        <div class="life-grid" id="life-grid"></div>
+      </section>
+
+      <section id="posts" class="section split">
+        <div class="section-heading">
+          <p class="eyebrow">Writing</p>
+          <h2>文章和笔记</h2>
+          <p>这里可以接 Mx Space 的文章列表，也可以先手动维护。</p>
+        </div>
+        <div class="list" id="post-list"></div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Projects</p>
+          <h2>作品展示</h2>
+          <p>放你正在做、已经完成、或者想给别人看的项目。</p>
+        </div>
+        <div class="project-grid" id="project-grid"></div>
+      </section>
+
+      <section id="live" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Live Data</p>
+          <h2>外部接口片区</h2>
+          <p>天气、GitHub、B 站、服务器状态等信息可以通过自己的 API 中转展示。</p>
+        </div>
+        <div class="live-grid" id="live-grid"></div>
+      </section>
+
+      <section id="contact" class="section contact">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>联系我</h2>
+          <p>这里可以放邮箱、GitHub、B 站、微信二维码或网盘入口。</p>
+        </div>
+        <div class="contact-links" id="contact-links"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© <span id="year"></span> Hans Xu</span>
+      <span>Built for hansxu.ccwu.cc</span>
+    </footer>
+
+    <script src="./config.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
