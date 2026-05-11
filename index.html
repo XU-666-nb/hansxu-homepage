@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hans Xu</title>
+    <title>Hans Xu | 个人博客</title>
     <meta
       name="description"
-      content="Hans Xu 的个人主页，记录生活、文章、项目和实时数据。"
+      content="Hans Xu 的个人博客，记录生活、照片、文章、项目和实时数据。"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=20260511-2" />
   </head>
   <body>
     <header class="site-header">
@@ -29,65 +29,163 @@
       <section class="hero">
         <div class="hero-copy">
           <p class="eyebrow">hansxu.ccwu.cc</p>
-          <h1>Hans Xu 的个人空间</h1>
+          <h1>把生活、想法和折腾过的东西放在同一个地方。</h1>
           <p class="lead">
-            用来放生活记录、照片、文章、项目和一些从其他网站接入的实时信息。
+            这里是 Hans Xu 的个人博客：收纳日常照片、随笔、项目记录，也预留了接入天气、GitHub、服务状态等实时数据的位置。
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#life">看看生活</a>
-            <a class="button" href="#live">实时数据</a>
+            <a class="button primary" href="#life">看生活相册</a>
+            <a class="button" href="#posts">读最近文章</a>
           </div>
         </div>
-        <div class="hero-panel" aria-label="今日状态">
+        <aside class="hero-panel" aria-label="今日状态">
           <span class="panel-label">Today</span>
           <strong id="today-title">正在加载今日状态</strong>
           <p id="today-note">稍等一下，页面正在读取本地配置。</p>
-        </div>
+          <div class="status-list" id="status-list"></div>
+        </aside>
       </section>
 
       <section id="life" class="section">
         <div class="section-heading">
           <p class="eyebrow">Life</p>
           <h2>生活片区</h2>
-          <p>照片、日常、旅行和想保存下来的小片段。</p>
+          <p>照片、日常、旅行和想保存下来的小片段。图片已经改为站内相对路径，本地预览和部署后都能显示。</p>
         </div>
-        <div class="life-grid" id="life-grid"></div>
+        <div class="life-grid" id="life-grid">
+          <article class="card life-card">
+            <img src="./assets/life/old-bridge.png" alt="小城古桥" loading="lazy" />
+            <div class="card-body">
+              <span class="meta">家乡</span>
+              <h3>小城古桥</h3>
+              <p>老家的桥、树影和水面，适合放在首页做一个安静的开场。</p>
+            </div>
+          </article>
+          <article class="card life-card">
+            <img src="./assets/life/evening-bridge.png" alt="傍晚的桥" loading="lazy" />
+            <div class="card-body">
+              <span class="meta">散步</span>
+              <h3>傍晚的桥</h3>
+              <p>河面、石桥和慢慢暗下来的天空，像一天快要收尾时的停顿。</p>
+            </div>
+          </article>
+          <article class="card life-card">
+            <img
+              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80"
+              alt="最近生活"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <span class="meta">日常</span>
+              <h3>最近生活</h3>
+              <p>放几张日常照片，或者写一句今天发生的小事。</p>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section id="posts" class="section split">
         <div class="section-heading">
           <p class="eyebrow">Writing</p>
           <h2>文章和笔记</h2>
-          <p>这里可以接 Mx Space 的文章列表，也可以先手动维护。</p>
+          <p>先手动维护最近文章，之后可以继续接 Mx Space、静态 Markdown 或其他博客 API。</p>
         </div>
-        <div class="list" id="post-list"></div>
+        <div class="list" id="post-list">
+          <a class="post-item" href="#">
+            <span class="meta">2026-05-11</span>
+            <h3>第一篇文章：先把空间搭起来</h3>
+            <p>记录这个个人主页从静态页面开始，逐步接入相册、文章和外部服务的过程。</p>
+            <div class="tag-row">
+              <span class="tag">建站</span>
+              <span class="tag">Cloudflare</span>
+            </div>
+          </a>
+          <a class="post-item" href="#">
+            <span class="meta">2026-05-11</span>
+            <h3>我的工具箱</h3>
+            <p>记录常用软件、网站、服务器配置、Cloudflare 设置和折腾过程。</p>
+            <div class="tag-row">
+              <span class="tag">工具</span>
+              <span class="tag">效率</span>
+            </div>
+          </a>
+        </div>
       </section>
 
       <section id="projects" class="section">
         <div class="section-heading">
           <p class="eyebrow">Projects</p>
           <h2>作品展示</h2>
-          <p>放你正在做、已经完成、或者想给别人看的项目。</p>
+          <p>放正在做、已经完成，或者以后想给别人看的项目。</p>
         </div>
-        <div class="project-grid" id="project-grid"></div>
+        <div class="project-grid" id="project-grid">
+          <a class="card project-card" href="https://hansxu.ccwu.cc">
+            <div class="card-body">
+              <h3>个人主页</h3>
+              <p>当前这个站点，适合部署到 Cloudflare Pages，也方便继续扩展成博客。</p>
+              <span class="project-arrow">查看 →</span>
+            </div>
+          </a>
+          <a class="card project-card" href="#">
+            <div class="card-body">
+              <h3>网盘入口</h3>
+              <p>可以放 AList、123 云盘分享页或常用文件导航。</p>
+              <span class="project-arrow">查看 →</span>
+            </div>
+          </a>
+          <a class="card project-card" href="#">
+            <div class="card-body">
+              <h3>接口中转</h3>
+              <p>通过 Cloudflare Workers 隐藏密钥，并缓存第三方 API。</p>
+              <span class="project-arrow">查看 →</span>
+            </div>
+          </a>
+        </div>
       </section>
 
       <section id="live" class="section">
         <div class="section-heading">
           <p class="eyebrow">Live Data</p>
           <h2>外部接口片区</h2>
-          <p>天气、GitHub、B 站、服务器状态等信息可以通过自己的 API 中转展示。</p>
+          <p>天气、GitHub、服务状态等信息可以通过自己的 Cloudflare Worker 中转展示。</p>
         </div>
-        <div class="live-grid" id="live-grid"></div>
+        <div class="live-grid" id="live-grid">
+          <article class="card live-card">
+            <div class="card-body">
+              <h3>天气</h3>
+              <p>建议用 Cloudflare Worker 请求天气 API。</p>
+              <div class="live-value">待接入</div>
+            </div>
+          </article>
+          <article class="card live-card">
+            <div class="card-body">
+              <h3>GitHub</h3>
+              <p>可展示仓库、Star、最近提交。</p>
+              <div class="live-value">待接入</div>
+            </div>
+          </article>
+          <article class="card live-card">
+            <div class="card-body">
+              <h3>服务器</h3>
+              <p>可展示在线状态、CPU、内存或服务健康度。</p>
+              <div class="live-value">待接入</div>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section id="contact" class="section contact">
         <div>
           <p class="eyebrow">Contact</p>
           <h2>联系我</h2>
-          <p>这里可以放邮箱、GitHub、B 站、微信二维码或网盘入口。</p>
+          <p>这里可以放邮箱、GitHub、B 站、网盘入口，或者后续换成二维码和留言表单。</p>
         </div>
-        <div class="contact-links" id="contact-links"></div>
+        <div class="contact-links" id="contact-links">
+          <a class="button" href="mailto:me@ccwu.cc">Email</a>
+          <a class="button" href="https://github.com/">GitHub</a>
+          <a class="button" href="https://www.bilibili.com/">Bilibili</a>
+          <a class="button" href="#">Files</a>
+        </div>
       </section>
     </main>
 
@@ -96,7 +194,7 @@
       <span>Built for hansxu.ccwu.cc</span>
     </footer>
 
-    <script src="./config.js"></script>
-    <script src="./script.js"></script>
+    <script src="./config.js?v=20260511-2"></script>
+    <script src="./script.js?v=20260511-2"></script>
   </body>
 </html>

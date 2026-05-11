@@ -1,5 +1,5 @@
 @echo off
-cd /d "E:\个人主页"
+cd /d "%~dp0"
 
 git status --short > "%TEMP%\homepage_git_status.txt"
 for %%A in ("%TEMP%\homepage_git_status.txt") do set STATUS_SIZE=%%~zA
