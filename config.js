@@ -36,13 +36,6 @@ window.HOME_CONFIG = {
       text: "把去过的城市、拍过的照片和路线整理在这里。",
       image:
         "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=80"
-    },
-    {
-      title: "相册入口",
-      tag: "照片",
-      text: "以后可以接 R2、AList、NAS 或 Mx Space 的图片内容。",
-      image:
-        "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1000&q=80"
     }
   ],
   posts: [
