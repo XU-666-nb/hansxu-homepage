@@ -3,10 +3,10 @@ window.HOME_CONFIG = {
     name: "Hans Xu",
     domain: "hansxu.ccwu.cc",
     todayTitle: "欢迎来到 Hans Xu 的个人空间",
-    todayNote: "今天也在慢慢整理生活、照片、文章和一些有用的小工具。",
+    todayNote: "这里会慢慢整理生活照片、文章笔记、项目和一些有用的小工具。",
     stats: [
-      { label: "相册", value: "5 组" },
-      { label: "文章", value: "3 篇" },
+      { label: "相册", value: "4 组" },
+      { label: "文章", value: "1 篇" },
       { label: "项目", value: "3 个" }
     ]
   },
@@ -40,25 +40,11 @@ window.HOME_CONFIG = {
   ],
   posts: [
     {
-      title: "第一篇文章：先把空间搭起来",
-      date: "2026-05-11",
-      text: "记录这个个人主页从静态页面开始，逐步接入相册、文章和外部服务的过程。",
-      url: "#",
-      tags: ["建站", "Cloudflare"]
-    },
-    {
-      title: "我的工具箱",
-      date: "2026-05-11",
-      text: "记录常用软件、网站、服务器配置、Cloudflare 设置和折腾过程。",
-      url: "#",
-      tags: ["工具", "效率"]
-    },
-    {
-      title: "给照片留一个固定入口",
-      date: "2026-05-11",
-      text: "把散落在手机、网盘和电脑里的照片整理成能被长期访问的相册。",
-      url: "#",
-      tags: ["照片", "生活"]
+      title: "自己创建个人博客的详细步骤",
+      date: "2026-05-12",
+      text: "一篇 Word 文档，记录从准备素材、搭建静态页面、放入照片文章，到用 GitHub 和 Cloudflare Pages 发布个人博客的完整流程。",
+      url: "./assets/article/create-personal-blog.docx",
+      tags: ["个人博客", "教程", "Word"]
     }
   ],
   projects: [
