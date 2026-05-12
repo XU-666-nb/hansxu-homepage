@@ -88,7 +88,7 @@ const renderProjects = () => {
     const body = createElement("div", "card-body");
     body.append(createElement("h3", "", item.title));
     body.append(createElement("p", "", item.text));
-    body.append(createElement("span", "project-arrow", "查看 →"));
+    body.append(createElement("span", "project-arrow", "\u67e5\u770b \u2192"));
     card.append(body);
     grid.append(card);
   });
@@ -102,7 +102,7 @@ const fetchLiveValue = async (item, valueNode) => {
     const data = await response.json();
     valueNode.textContent = data.value || data.text || item.value;
   } catch {
-    valueNode.textContent = item.value || "待接入";
+    valueNode.textContent = item.value || "\u5f85\u63a5\u5165";
   }
 };
 
@@ -136,8 +136,8 @@ const renderLinks = () => {
   });
 };
 
-setText("today-title", config.profile?.todayTitle || "欢迎来到个人空间");
-setText("today-note", config.profile?.todayNote || "这里会继续补充生活、文章和项目。");
+setText("today-title", config.profile?.todayTitle || "\u6b22\u8fce\u6765\u5230\u4e2a\u4eba\u7a7a\u95f4");
+setText("today-note", config.profile?.todayNote || "\u8fd9\u91cc\u4f1a\u7ee7\u7eed\u8865\u5145\u751f\u6d3b\u3001\u6587\u7ae0\u548c\u9879\u76ee\u3002");
 setText("year", String(new Date().getFullYear()));
 
 renderStats();
