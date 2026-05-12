@@ -66,22 +66,28 @@ window.HOME_CONFIG = {
   ],
   liveCards: [
     {
-      title: "\u5929\u6c14",
-      description: "\u5efa\u8bae\u7528 Cloudflare Worker \u8bf7\u6c42\u5929\u6c14 API\u3002",
-      value: "\u5f85\u63a5\u5165",
-      endpoint: "https://api.hansxu.ccwu.cc/weather"
+      title: "\u6b66\u6c49\u5929\u6c14",
+      description: "\u4e2d\u56fd\u6e56\u5317\u6b66\u6c49\u5b9e\u65f6\u5929\u6c14\u3002",
+      value: "\u52a0\u8f7d\u4e2d",
+      type: "weather",
+      endpoint:
+        "https://api.open-meteo.com/v1/forecast?latitude=30.5928&longitude=114.3055&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m&timezone=Asia%2FShanghai"
     },
     {
-      title: "GitHub",
-      description: "\u53ef\u5c55\u793a\u4ed3\u5e93\u3001Star\u3001\u6700\u8fd1\u63d0\u4ea4\u3002",
-      value: "\u5f85\u63a5\u5165",
-      endpoint: "https://api.hansxu.ccwu.cc/github"
+      title: "\u4e1c\u4eac\u5929\u6c14",
+      description: "\u65e5\u672c\u4e1c\u4eac\u5b9e\u65f6\u5929\u6c14\u3002",
+      value: "\u52a0\u8f7d\u4e2d",
+      type: "weather",
+      endpoint:
+        "https://api.open-meteo.com/v1/forecast?latitude=35.6762&longitude=139.6503&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m&timezone=Asia%2FTokyo"
     },
     {
-      title: "\u670d\u52a1\u5668",
-      description: "\u53ef\u5c55\u793a\u5728\u7ebf\u72b6\u6001\u3001CPU\u3001\u5185\u5b58\u6216\u670d\u52a1\u5065\u5eb7\u5ea6\u3002",
-      value: "\u5f85\u63a5\u5165",
-      endpoint: "https://api.hansxu.ccwu.cc/status"
+      title: "\u7ebd\u7ea6\u5929\u6c14",
+      description: "\u7f8e\u56fd\u7ebd\u7ea6\u5b9e\u65f6\u5929\u6c14\u3002",
+      value: "\u52a0\u8f7d\u4e2d",
+      type: "weather",
+      endpoint:
+        "https://api.open-meteo.com/v1/forecast?latitude=40.7128&longitude=-74.0060&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m&timezone=America%2FNew_York"
     }
   ],
   links: [

@@ -362,6 +362,11 @@ main {
   font-weight: 850;
 }
 
+.live-detail {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
 .contact {
   display: flex;
   align-items: center;

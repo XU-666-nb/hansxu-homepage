@@ -22,6 +22,44 @@ const createLink = (href, className, text) => {
   return link;
 };
 
+const weatherTextByCode = {
+  0: "\u6674",
+  1: "\u5927\u90e8\u6674\u6717",
+  2: "\u5c40\u90e8\u591a\u4e91",
+  3: "\u9634",
+  45: "\u6709\u96fe",
+  48: "\u96fe\u51c7",
+  51: "\u5c0f\u6bdb\u6bdb\u96e8",
+  53: "\u4e2d\u7b49\u6bdb\u6bdb\u96e8",
+  55: "\u5927\u6bdb\u6bdb\u96e8",
+  61: "\u5c0f\u96e8",
+  63: "\u4e2d\u96e8",
+  65: "\u5927\u96e8",
+  71: "\u5c0f\u96ea",
+  73: "\u4e2d\u96ea",
+  75: "\u5927\u96ea",
+  80: "\u5c0f\u9635\u96e8",
+  81: "\u4e2d\u7b49\u9635\u96e8",
+  82: "\u5f3a\u9635\u96e8",
+  95: "\u96f7\u66b4",
+  96: "\u96f7\u66b4\u4f34\u5c0f\u51b0\u96f9",
+  99: "\u96f7\u66b4\u4f34\u5927\u51b0\u96f9"
+};
+
+const formatWeather = (data) => {
+  const current = data.current || {};
+  const temperature = Math.round(current.temperature_2m);
+  const apparent = Math.round(current.apparent_temperature);
+  const humidity = Math.round(current.relative_humidity_2m);
+  const wind = Math.round(current.wind_speed_10m);
+  const weather = weatherTextByCode[current.weather_code] || "\u5929\u6c14\u6570\u636e";
+
+  return {
+    value: `${temperature}\u00b0C`,
+    detail: `${weather} · \u4f53\u611f ${apparent}\u00b0C · \u6e7f\u5ea6 ${humidity}% · \u98ce\u901f ${wind} km/h`
+  };
+};
+
 const renderStats = () => {
   const list = document.getElementById("status-list");
   if (!list || !config.profile?.stats) return;
@@ -100,9 +138,19 @@ const fetchLiveValue = async (item, valueNode) => {
   try {
     const response = await fetch(item.endpoint);
     const data = await response.json();
+    if (item.type === "weather") {
+      const weather = formatWeather(data);
+      valueNode.textContent = weather.value;
+      valueNode.nextElementSibling.textContent = weather.detail;
+      return;
+    }
+
     valueNode.textContent = data.value || data.text || item.value;
   } catch {
     valueNode.textContent = item.value || "\u5f85\u63a5\u5165";
+    if (valueNode.nextElementSibling) {
+      valueNode.nextElementSibling.textContent = "\u6682\u65f6\u65e0\u6cd5\u8bfb\u53d6\u5b9e\u65f6\u5929\u6c14";
+    }
   }
 };
 
@@ -115,10 +163,12 @@ const renderLive = () => {
     const card = createElement("article", "card live-card");
     const body = createElement("div", "card-body");
     const value = createElement("div", "live-value", item.value);
+    const detail = createElement("p", "live-detail", "\u6b63\u5728\u8bfb\u53d6\u5b9e\u65f6\u5929\u6c14...");
 
     body.append(createElement("h3", "", item.title));
     body.append(createElement("p", "", item.description));
     body.append(value);
+    body.append(detail);
     card.append(body);
     grid.append(card);
 
